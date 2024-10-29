@@ -47,6 +47,31 @@ bool checkWin(char grid[3][3], char turn) {
         }
     }
     
+    // check diagonals
+    // check NW-SE diagonal
+    won = true;
+    for (int i = 0; i < 3; i++) {
+        if (grid[i][i] != turn) {
+            won = false;
+            break;
+        }
+    }
+    if (won) {
+        return true;
+    }
+    
+    // check NE-SW diagonal
+    won = true;
+    for (int i = 0; i < 3; i++) {
+        if (grid[i][2 - i] != turn) {
+            won = false;
+            break;
+        }
+    }
+    if (won) {
+        return true;
+    }
+    
     return false;
 }
 
