@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+void findHome(int x, int y);
+
+int main() {
+	findHome(3, 4);
+}
+
+void findHome(int x, int y) {
+	cout << "x = " << x << ", y = " << y << endl;
+	if (y > 1) {
+		cout << "Move down..." << endl;
+		return findHome(x, y - 1);
+	}
+	if (y < 1) {
+		cout << "Move up..." << endl;
+		return findHome(x, y + 1);
+	}
+	if (x > 1) {
+		cout << "Move left..." << endl;
+		return findHome(x - 1, y);
+	}
+	if (x < 1) {
+		cout << "Move right..." << endl;
+		return findHome(x + 1, y);
+	}
+	cout << "She's home!" << endl;
+}
