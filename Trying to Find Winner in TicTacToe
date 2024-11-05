@@ -1,0 +1,78 @@
+#include <iostream>
+using namespace std;
+
+const int SIZE = 10;
+
+char whoWon(char board[3][3]);
+
+int main() {
+	char theWinner;
+
+	char board[3][3] = {
+		{'X', 'X', '-'},
+		{'O', 'X', '-'},
+		{'O', '-', '-'},
+	};
+
+	for (int r = 0; r < 3; r++) {
+		for (int c = 0; c < 3; c++) {
+			cout << board[r][c] << "\t";
+		}
+		cout << endl;
+	}
+	
+	theWinner = whoWon(board);
+
+	if (theWinner == '-') {
+		cout << endl;
+		cout << "No one has won... yet..." << endl;
+	}
+	else {
+		cout << endl;
+		cout << whoWon(board) << " Has Won " << endl;
+	}
+	return 0;
+}
+
+char whoWon(char board[3][3]) {
+	bool thereIsWinner = false;
+	char players[2] = { 'X','O' };
+	char winner = '-';
+
+	while (thereIsWinner != true) {
+		for (int row = 0; row < 3; row++) {
+			for (int column = 0; column < 3; column++) {
+				if (board[row][column] == players[0]) {
+					winner = players[0];
+					thereIsWinner = true;
+					break;
+				}
+			}
+		}
+
+		for (int column = 0; column < 3; column++) {
+			for (int row = 0; row < 3; row++) {
+				if (board[column][row] == players[0]) {
+					winner = players[0];
+					thereIsWinner = true;
+					break;
+				}
+			}
+		}
+	} 
+
+
+	return winner;
+}
+
+/*
+	char arr1[3][3] = {
+		{'A','B','C'},
+		{'D','E','F'},
+		{'G','H','I'},
+	};
+
+
+
+	for (int i = 0;)
+}*/
