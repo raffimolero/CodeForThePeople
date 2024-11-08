@@ -1,10 +1,6 @@
 <html>
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <form action="post">
-    </form>
+  <head>
+    <title>Hello, World!</title>
     <style>
 
 body {
@@ -28,7 +24,6 @@ body {
     <link href="https://fonts.googleapis.com/css2?family=Varela+Round&display=swap" rel="stylesheet">
   </head>
   <body>
-      <!--  these do not follow the correct field names  -->
       <label for="name">Name: </label>
       <input type="text" name="customerName" id="name" placeholder="[Lastname, Firstname M.I.]" />
       <br />
@@ -72,7 +67,7 @@ function validate() {
     }],
     password: [
       {
-      	regex: /\w/,
+      	regex: /\W/,
         error: "Must contain at least one special character",
       }, {
         regex: /\d/,
@@ -82,10 +77,10 @@ function validate() {
         error: "Must contain at least one lowercase letter",
       }, {
         regex: /[A-Z]/,
-        error: "Must contain at least one CAPITAL LETTER",
+        error: "Must contain at least one Capital Letter",
       }, {
       	regex: /.{8,}/,
-        error: "Must be at least 8 characters",
+        error: "Must contain at least 8 characters",
       }
     ],
   });
